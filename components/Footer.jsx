@@ -24,7 +24,7 @@ export default function Footer() {
         >
             <Container>
                 <Typography variant="body2" align="center">
-                    &copy; {new Date().getFullYear()} Your Name. (Insert quantity) Rights reserved.
+                    &copy; {new Date().getFullYear()} Cardo Pixelado. Some rights reserved.
                 </Typography>
             </Container>
         </Box>

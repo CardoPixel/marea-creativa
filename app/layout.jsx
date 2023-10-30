@@ -8,6 +8,7 @@ import "./globals.css"
 import NavBar from "@components/NavBar";
 import Footer from "@components/Footer";
 
+import { getSortedPostsData } from '@lib/posts'
 
 
 /**
@@ -32,10 +33,10 @@ export async function generateMetadata({ params }) {
     authors: [{ name: 'Cardo Pixel', url: 'https://github.com/CardoPixel' }],
     creator: 'Cardo Pixel',
     publisher: 'Vercel',
-    themeColor: [
-      { media: '(prefers-color-scheme: light)', color: '#e133e3' },
-      { media: '(prefers-color-scheme: dark)', color: '#e133e3' },
-    ],
+    /*     themeColor: [
+          { media: '(prefers-color-scheme: light)', color: '#e133e3' },
+          { media: '(prefers-color-scheme: dark)', color: '#e133e3' },
+        ], */
     formatDetection: {
       email: false,
       address: false,
@@ -60,12 +61,13 @@ const DynamicPageLoadChecker = dynamic(() => import('@utils/PageLoadChecker'), {
  * @return {*} 
  */
 export default function RootLayout({ children }) {
+  const allPostsData = getSortedPostsData()
   return (
     <html lang="en">
       <ThemeRegistry options={{ key: "mui" }}>
         <body>
           <DynamicPageLoadChecker />
-          <NavBar />
+          <NavBar posts={allPostsData} />
           {(children)}
           <Footer />
         </body>

@@ -7,15 +7,15 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Drawer from '@mui/material/Drawer';
+import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 
 import MenuIcon from '@mui/icons-material/Menu';
-import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
 
+import MareaCreativaIcon from '@components/Icons/mc-icon-min.svg'
 import ThemeSwitcher from '@components/ThemeSwitcher';
-
 
 /**
  *
@@ -23,7 +23,7 @@ import ThemeSwitcher from '@components/ThemeSwitcher';
  * @export
  * @return {*} 
  */
-export default function NavBar() {
+export default function NavBar({ posts }) {
     const [drawerOpen, setDrawerOpen] = useState(false);
 
     const toggleDrawer = () => {
@@ -41,18 +41,13 @@ export default function NavBar() {
             onKeyDown={toggleDrawer}
         >
             <List>
-                <ListItemButton>
-                    <ListItemText primary="Link 1" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemText primary="Link 2" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemText primary="Link 3" />
-                </ListItemButton>
-                <ListItemButton>
-                    <ListItemText primary="Link 4" />
-                </ListItemButton>
+                {posts.map((post) => (
+                    <Link href={`/posts/${post.id}`} key={post.id}>
+                        <ListItemButton key={post.id}>
+                            <ListItemText primary={post.title} />
+                        </ListItemButton>
+                    </Link>
+                ))}
             </List>
         </Box>
     );
@@ -61,28 +56,31 @@ export default function NavBar() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" color="primary" enableColorOnDark sx={{}}>
                 <Toolbar>
-                    <IconButton
-                        size="large"
-                        color="inherit"
-                        aria-label="logo"
-                        sx={{ mx: 2 }}
-                    >
-                        <IntegrationInstructionsIcon />
-                    </IconButton>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                    >
-                        MD3 Next.js Template
-                    </Typography>
+                    <Link href={`/`} color="primary.contrastText" underline="none">
+                        <IconButton
+                            size="large"
+                            aria-label="logo"
+                            color="inherit"
+                            sx={{ mx: 2, maxHeight: 56, maxWidth: 56 }}
+                        >
+                            <MareaCreativaIcon />
+                        </IconButton>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'inline' } }}
+                        >
+                            Marea Creativa
+                        </Typography>
+                    </Link>
+                    <div style={{ flex: 1 }}></div> {/* This creates space to push the following components to the right */}
                     <ThemeSwitcher />
                     <IconButton
                         size="large"
                         color="inherit"
                         aria-label="open drawer"
-                        sx={{ mr: 2 }}
+                        sx={{ mx: 2 }}
                         onClick={toggleDrawer}
                     >
                         <MenuIcon />
