@@ -42,9 +42,9 @@ export async function generateMetadata({ params }) {
       address: false,
       telephone: false,
     },
-    openGraph: {
+    /* openGraph: {
       images: '/og-image.png',
-    },
+    }, */
   }
 }
 
