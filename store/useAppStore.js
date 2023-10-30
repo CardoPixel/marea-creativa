@@ -4,7 +4,7 @@ import {persist} from 'zustand/middleware';
 export const useAppStore = create(
   persist(
     (set) => ({
-      themePreference: 'system',
+      themePreference: 'dark',
       setThemePreference: (theme) => set({themePreference: theme}),
     }),
     {
