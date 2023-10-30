@@ -33,18 +33,15 @@ export async function generateMetadata({ params }) {
     authors: [{ name: 'Cardo Pixel', url: 'https://github.com/CardoPixel' }],
     creator: 'Cardo Pixel',
     publisher: 'Vercel',
-    /*     themeColor: [
-          { media: '(prefers-color-scheme: light)', color: '#e133e3' },
-          { media: '(prefers-color-scheme: dark)', color: '#e133e3' },
-        ], */
+    themeColor: '#e133e3',
     formatDetection: {
       email: false,
       address: false,
       telephone: false,
     },
-    /* openGraph: {
+    openGraph: {
       images: '/og-image.png',
-    }, */
+    },
   }
 }
 
