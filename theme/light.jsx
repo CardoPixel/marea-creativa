@@ -18,6 +18,7 @@ export const themeLight = createTheme({
         },
         background: {
             default: "#E0E0E0",
+            paper: "rgba(255,255,255,0.5)",
         }
     },
     typography: {

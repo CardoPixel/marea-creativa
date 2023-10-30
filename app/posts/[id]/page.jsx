@@ -1,8 +1,6 @@
 import Date from '@components/Date'
 
-// eslint-disable-next-line no-unused-vars
-import { getAllPostIds, getPostData } from '@lib/posts'
-import { Container } from '@mui/material'
+import { getPostData } from '@lib/posts'
 
 /**
  * Generate metadata for a post.
@@ -29,20 +27,20 @@ export default async function Post({ params }) {
     const postData = await getPostData(params.id)
 
     return (
-        <Container sx={{ maxWidth: "96%", mx: "auto" }}>
+        <>
             {/* Post Title */}
             <h1 className='font-extrabold text-3xl mb-1'>{postData.title}</h1>
 
-            <div className='text-gray-500 font-medium mb-5'>
+            <div className='font-medium mb-5'>
                 <Date dateString={postData.date} />
             </div>
 
             {/* Post Content */}
             <div
-                className='text-gray-600'
+                className=''
                 dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
             />
-        </Container>
+        </>
     )
 }
 

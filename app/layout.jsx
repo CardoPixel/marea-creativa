@@ -3,6 +3,7 @@ import React from "react";
 import dynamic from 'next/dynamic';
 
 import ThemeRegistry from "@theme/ThemeRegistry";
+import { Box } from "@mui/material";
 
 import "./globals.css"
 import NavBar from "@components/NavBar";
@@ -65,9 +66,9 @@ export default function RootLayout({ children }) {
         <body>
           <DynamicPageLoadChecker />
           <NavBar posts={allPostsData} />
-          <div className="container">
+          <Box className="container" sx={{ px: 2, mx: 0, width: "100%", maxWidth: "none", height: "100%", maxHeight: "81.5vh", overflowY: "scroll", backgroundColor: "background.paper" }}>
             {(children)}
-          </div>
+          </Box>
           <div className="ocean">
             <div className="wave"></div>
             <div className="wave wave2"></div>

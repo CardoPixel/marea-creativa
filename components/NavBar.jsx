@@ -52,6 +52,12 @@ export default function NavBar({ posts }) {
         </Box>
     );
 
+    const paperProps = {
+        sx: {
+            bgcolor: "background.default", // Customize the background color
+        },
+    };
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" color="primary" enableColorOnDark sx={{}}>
@@ -87,7 +93,7 @@ export default function NavBar({ posts }) {
                     </IconButton>
                 </Toolbar>
             </AppBar>
-            <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
+            <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer} PaperProps={paperProps}>
                 {list}
             </Drawer>
         </Box>

@@ -14,7 +14,7 @@ export default function Footer() {
         <Box
             component="footer"
             sx={{
-                position: 'fixed',
+                position: 'relative',
                 bottom: 0,
                 width: '100%',
                 backgroundColor: 'primary.dark',
