@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
     authors: [{ name: 'Cardo Pixel', url: 'https://github.com/CardoPixel' }],
     creator: 'Cardo Pixel',
     publisher: 'Vercel',
-    themeColor: '#e133e3',
+    /* themeColor: '#e133e3', */
     formatDetection: {
       email: false,
       address: false,
@@ -65,7 +65,13 @@ export default function RootLayout({ children }) {
         <body>
           <DynamicPageLoadChecker />
           <NavBar posts={allPostsData} />
-          {(children)}
+          <div className="container">
+            {(children)}
+          </div>
+          <div className="ocean">
+            <div className="wave"></div>
+            <div className="wave wave2"></div>
+          </div>
           <Footer />
         </body>
       </ThemeRegistry>

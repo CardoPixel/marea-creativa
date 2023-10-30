@@ -1,3 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  background: radial-gradient(
+    rgba(255, 254, 234, 0) 0%,
+    rgba(255, 254, 234, 0) 35%,
+    rgba(255, 254, 234, 0) 100%
+  );
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #71014c;
+  z-index: 0;
+}
+
+.wave {
+  background: url('/wave.svg') repeat-x;
+  position: absolute;
+  width: 6400px;
+  top: -198px;
+  left: 0;
+  height: 198px;
+  transform: translate(0, 0, 0);
+  animation: wave 7s ease infinite;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  top: -168px;
+  animation: swell 4s ease infinite;
+  opacity: 1;
+  z-index: -1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate(0, -30px);
+  }
+  50% {
+    transform: translate(0, 5px);
+  }
+}
