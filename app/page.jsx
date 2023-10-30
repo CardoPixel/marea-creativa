@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
+import DiscordWidget from '../components/DiscordWidget';
 
 /**
  * Home component for the main page.
@@ -9,7 +10,10 @@ import { Grid, Typography } from '@mui/material';
  */
 export default function Home() {
   return (
-    <Grid container spacing={1}>
+    <Grid container direction="column" spacing={1}>
+      <Grid item xs sx={{ mt: 4 }}>
+        <DiscordWidget />
+      </Grid>
       <Grid item xs>
         <Typography variant="body1" sx={{
           m: 2,

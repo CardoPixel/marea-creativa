@@ -1,22 +1,10 @@
-import Date from '@components/Date'
+/* eslint-disable @next/next/no-img-element */
+import ReactMarkdown from 'react-markdown';
+import { NoSsr } from '@mui/material';
 
-import { getPostData } from '@lib/posts'
+import { getPostData } from '@lib/posts';
+import Date from '@components/Date';
 
-/**
- * Generate metadata for a post.
- *
- * @param {object} params - The parameters object containing the post ID.
- * @return {object} An object with metadata, including the post title.
- */
-export async function generateMetadata({ params }) {
-    const postData = await getPostData(params.id)
-
-    return {
-        title: postData.title,
-    }
-}
-
-// -< Post >-
 /**
  * Post component to display a single post.
  *
@@ -24,11 +12,25 @@ export async function generateMetadata({ params }) {
  * @return {JSX.Element} The JSX component for displaying the post.
  */
 export default async function Post({ params }) {
-    const postData = await getPostData(params.id)
+    const postData = await getPostData(params.id);
+
+    const getImgWithDimensions = async (props) => {
+        return (
+            <div className='overflow-hidden relative'>
+                <img
+                    src={props.src}
+                    alt={props.alt}
+                    style={{
+                        objectFit: "scale-down",
+                        maxWidth: "96vw"
+                    }}
+                />
+            </div>
+        );
+    };
 
     return (
-        <>
-            {/* Post Title */}
+        <NoSsr>
             <h1 className='font-extrabold text-3xl mb-1'>{postData.title}</h1>
 
             <div className='font-medium mb-5'>
@@ -36,14 +38,13 @@ export default async function Post({ params }) {
             </div>
 
             {/* Post Content */}
-            <div
-                className=''
-                dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-            />
-        </>
-    )
+            <ReactMarkdown
+                components={{
+                    img: getImgWithDimensions,
+                }}
+            >
+                {postData.content}
+            </ReactMarkdown>
+        </NoSsr>
+    );
 }
-
-/* TIP: dangerouslySetInnerHTML is a React feature that allows you to render HTML that comes from an external source as if it were regular JSX. It replaces innerHTML used by Javascript.
-Here we are rendering the HTML that comes from the markdown file thanks to remark (remark converted the markdown into HTML)
-*/

@@ -8,12 +8,17 @@ import React from 'react';
  */
 function DiscordWidget() {
     return (
-        <iframe
-            src="https://discord.com/widget?id=1162487456940175461&theme=dark"
-            width="350"
-            height="500"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-        />
+        <div style={{ background: 'transparent' }}>
+            <iframe
+                src="https://discord.com/widget?id=1162487456940175461&theme=dark"
+                width="100%"
+                height="400"
+                allowtransparency="true"
+                frameborder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                style={{ overflow: "hidden", borderRadius: 15 }}
+            />
+        </div>
     );
 }
 

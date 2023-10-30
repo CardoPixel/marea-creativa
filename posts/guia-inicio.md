@@ -25,17 +25,17 @@ Nuestro plan para iniciar en Ogrest con el mejor inicio posible
 6. Tomar la misión diaria de matar a un Jefe (que debería ser el de Miabuelita
    el día 31) y continuar con el tutorial.
 
-7. Al salir de las alcantarillas, hacer la mazmo de Miabulita en Stasis 1 para
-   reclamar la misión de los cazadores.
+7. Al salir de las alcantarillas, hacer la mazmorra **Casa de la Miaubuelita**
+   en Stasis 1 para reclamar la misión de los cazadores.
 
 8. Reclamar el artefacto al final del tutorial y usarlo para abrir los cofres de
-   Astrub, el Caballero de Astrub no puede ni usarse en el server así que sólo
-   reclamenlo y guardenlo en el cofre de cuenta (el del merkasaco), sólo en caso
-   que Ankama cambie de opinión más adelante.
+   Astrub, el **Caballero de Astrub no puede ni usarse en el servidor** así que
+   sólo reclamenlo y guardenlo en el cofre de cuenta (el del merkasaco), sólo en
+   caso que Ankama cambie de opinión más adelante.
 
 9. Hacer misiones automáticas, de cazadores o mercenarios hasta alcanzar nivel
    21, tratar de completar o en su defecto tener todos los especios de equipo
    utilizados.
 
-10. Lanzarse a hacer la Brecha Dimensional de Tainela con el gremio (para
+10. Lanzarse a hacer la **Brecha Dimensional de Tainela** con el gremio (para
     dropear la merkagema).

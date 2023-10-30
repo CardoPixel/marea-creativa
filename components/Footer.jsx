@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
 /**
@@ -24,7 +25,8 @@ export default function Footer() {
         >
             <Container>
                 <Typography variant="body2" align="center">
-                    &copy; {new Date().getFullYear()} Cardo Pixelado. Some rights reserved.
+                    &copy; {new Date().getFullYear()} <Link href="https://github.com/CardoPixel" target="_blank"
+                        rel="noopener noreferrer" color="#FFFFFF">Cardo Pixelado</Link>
                 </Typography>
             </Container>
         </Box>
