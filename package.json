@@ -21,7 +21,7 @@
     "@release-it/conventional-changelog": "^7.0.2",
     "@svgr/webpack": "^8.1.0",
     "@vercel/og": "^0.5.20",
-    "autoprefixer": "10.4.16",
+    "autoprefixer": "10.4.17",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
     "husky": "^8.0.3",
